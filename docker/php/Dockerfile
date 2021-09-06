@@ -52,6 +52,11 @@ RUN set -xe && \
 
 COPY docker-phalcon-* /usr/local/bin/
 
+# phalcon dev tools
+RUN curl -LOs https://github.com/phalcon/phalcon-devtools/releases/download/v4.2.0/phalcon.phar
+RUN chmod +x phalcon.phar
+RUN mv phalcon.phar /usr/local/bin/phalcon
+
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
