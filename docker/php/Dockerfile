@@ -64,7 +64,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install exif
 RUN docker-php-ext-install pcntl
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg
+RUN docker-php-ext-configure gd --with-freetype-dir --with-jpeg-dir
 RUN docker-php-ext-install gd
 
 # Install composer
